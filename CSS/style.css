@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+/* RESET */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+input,
+button,
+textarea {  
+    font: inherit;
+}
+
+/* VARIABLES */
+
+:root {
+    /* FONTS */
+    --FH: 'Courier New', Courier, monospace;
+    --BF: 'Roboto', sans-serif;
+
+    /* COLOURS */
+    --C1: #0C0F0A;
+    --C2: #FF206E; 
+    --C3: #FBFF12; 
+    --C4: #41EAD4;
+    --C5: #FFFFFF;
+
+    /* PADDING & MARGIN & BORDERS */
+    --SP: 0.25rem;
+}
+
+/* MAIN STYLES */
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: solid 1px var(--C5);
+}
+
+h1 {
+    color: var(--C2);
+    font-family: var(--FH);
+    padding: var(--SP);
+}
+
+.header_span1 {
+     color: var(--C3);
+}
+
+.header_span2 {
+    color: var(--C4);
+}
+
+body {
+    font-family: var(--BF);
+    background-color: var(--C1);
+    color: var(--C5);
+}
+
+.footer {
+    color: var(--C4);
+}

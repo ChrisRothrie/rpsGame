@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="author" content="Chris Rothrie">
+    <meta name="description" content="Rock paper scissors game">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock Paper Scissors!</title>
+    <link rel="icon" href="Images/gameFavIcon.png" type="image/x-icon">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>  
+    <header class="header">
+        <h1>Rock <span class="header_span1">Paper</span> <span class="header_span2">Scissors</span></h1>
+<!--         <nav>
+            <a href="">Scoreboard</a>
+        </nav> -->
+    </header>
+
+    <main>
+
+        <section>
+            <h2>Let's Play!</h2>
+
+            <form id="playerForm" class="playerForm" action="">
+                <label for="playerName">Name:</label>
+                <input type="text" name="playerName" id="playerName">
+                <button>Submit</button>
+            </form>
+
+            <form id="gameForm" class="gameForm" action="">
+                <button>Rock</button>
+                <button>Paper</button>
+                <button>Scissors</button>
+                <p>Your choice is...</p>
+            </form>
+
+        </section>
+
+        <section>
+            <h2>Scoreboard</h2>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Position</th>
+                        <th>Player</th>
+                        <th>Score</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <td data-cell="position">1</td>
+                    <td data-cell="player">Computer</td>
+                    <td data-cell="score">0</td>
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p class="center">Chris Rothrie &copy;</p>
+    </footer>
+</body>
+</html>

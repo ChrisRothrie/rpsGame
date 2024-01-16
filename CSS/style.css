@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Courgette&family=MedievalSharp&family=Roboto:wght@400;500;700&family=Rubik+Moonrocks&display=swap');
 
 /* RESET */
 
@@ -24,7 +24,9 @@ textarea {
 
 :root {
     /* FONTS */
-    --FH: 'Courier New', Courier, monospace;
+    --FH1: 'Rubik Moonrocks', sans-serif;
+    --FH2: 'Courgette', cursive;
+    --FH3: 'MedievalSharp', cursive;
     --BF: 'Roboto', sans-serif;
 
     /* COLOURS */
@@ -38,34 +40,174 @@ textarea {
     --SP: 0.25rem;
 }
 
+/* UTILITIES */
+
+.highlight {
+    text-decoration: underline;
+    color: var(--C2);
+    font-weight: bold;
+}
+
 /* MAIN STYLES */
 
 .header {
-    display: flex;
-    justify-content: space-between;
     border-bottom: solid 1px var(--C5);
+    display: flex;
+    justify-content: center;
+    
 }
 
 h1 {
-    color: var(--C2);
-    font-family: var(--FH);
     padding: var(--SP);
+    font-size: 5rem;
 }
 
-.header_span1 {
+.header_spanR {
+    color: var(--C2);
+    font-family: var(--FH1);
+}
+
+.header_spanP {
      color: var(--C3);
+     font-family: var(--FH2);
 }
 
-.header_span2 {
+.header_spanS {
     color: var(--C4);
+    font-family: var(--FH3);
 }
 
 body {
     font-family: var(--BF);
     background-color: var(--C1);
     color: var(--C5);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 .footer {
     color: var(--C4);
+    margin-top: auto;
+    min-width: 100%;
+    text-align: center;
+    padding: var(--SP);
+}
+
+h2, h3, form, table {
+    padding: var(--SP);
+}
+
+h2 {
+    font-size: 2rem;
+    margin-top: 1rem;
+    letter-spacing: 0.1rem;
+}
+
+h3 {
+    font-size: 1.5rem;
+    margin-top: 0.5rem;
+    letter-spacing: 0.1rem;
+    color: hwb(0 100% 0% / 0.753);
+}
+
+.gameSection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.gameForm, .playerForm {
+    display: flex;
+}
+
+.playerForm { 
+    flex-direction: column;
+    align-items: center;
+}
+
+.playerForm input, 
+.playerForm button,
+.nextGameForm button {
+    max-width: 50%;
+    min-width: 500px;
+    margin: var(--SP);
+    padding: var(--SP);
+}
+
+.playerForm button,
+.nextGameForm button {
+    color: var(--C5);
+    background-color: var(--C1);
+    border: 1px solid var(--C5);
+}
+
+.playerForm button:focus,
+.playerForm button:hover,
+.nextGameForm button:focus,
+.nextGameForm button:hover {
+    color: var(--C1);
+    background-color: var(--C5);
+    font-weight: bold;
+}
+
+.gameForm {
+    flex-flow: nowrap;
+    justify-content: space-between;
+}
+
+.gameForm_Rockbtn, .gameForm_Paperbtn, .gameForm_Scissorbtn {
+    padding: 1rem;
+    margin-top: 1rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    min-width: 250px;
+    min-height: 250px;
+    background-color: var(--C1);
+    border: none;
+}
+
+.gameForm_Rockbtn {
+    border: solid 2px var(--C2);
+    font-family: var(--FH1);
+    color: var(--C2);
+    font-size: 2rem;
+}
+
+.gameForm_Rockbtn:hover,
+.gameForm_Rockbtn:focus {
+    
+}
+
+.gameForm_Paperbtn {
+    border: solid 2px var(--C3);
+    font-family: var(--FH2);
+    color: var(--C3);
+    font-size: 2rem;
+}
+
+.gameForm_Scissorbtn {
+    border: solid 2px var(--C4);
+    font-family: var(--FH3);
+    color: var(--C4);
+    font-size: 2rem;
+}
+
+.scoreSection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.scoreSection table,
+.scoreSection th,
+.scoreSection td {
+    border: solid 1px var(--C5);
+    border-collapse: collapse;
+    padding: var(--SP);
+    text-align: center;
+}
+
+.scoreSection table {
+    margin-top: 1rem;
 }

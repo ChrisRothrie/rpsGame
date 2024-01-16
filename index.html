@@ -11,7 +11,7 @@
 </head>
 <body>  
     <header class="header">
-        <h1>Rock <span class="header_span1">Paper</span> <span class="header_span2">Scissors</span></h1>
+        <h1> <span class="header_spanR">Rock </span><span class="header_spanP">Paper</span><span class="header_spanS"> Scissors</span></h1>
 <!--         <nav>
             <a href="">Scoreboard</a>
         </nav> -->
@@ -19,25 +19,37 @@
 
     <main>
 
-        <section>
+        <section class="gameSection">
             <h2>Let's Play!</h2>
 
+            <h3>Player Details</h3>
+
             <form id="playerForm" class="playerForm" action="">
-                <label for="playerName">Name:</label>
-                <input type="text" name="playerName" id="playerName">
+<!--                 <label for="playerName">Name:</label> -->
+                <input type="text" name="playerName" id="playerName" placeholder="Enter your name...">
                 <button>Submit</button>
             </form>
 
+            <h3>Game</h3>
+
+            <p>Ready to play...<span class="highlight">you need to enter your name!</span></p>
+
             <form id="gameForm" class="gameForm" action="">
-                <button>Rock</button>
-                <button>Paper</button>
-                <button>Scissors</button>
-                <p>Your choice is...</p>
+                <button class="gameForm_Rockbtn">Rock</button>
+                <button class="gameForm_Paperbtn">Paper</button>
+                <button class="gameForm_Scissorbtn">Scissors</button>
+            </form>
+
+            <p id="gameSection_ result" class="gameSection_Result"></p>
+
+            <form id="nextGameForm" class = "nextGameForm">
+                <button>New Game</button>
+                <button>New Player</button>
             </form>
 
         </section>
 
-        <section>
+        <section class="scoreSection">
             <h2>Scoreboard</h2>
 
             <table>
@@ -45,13 +57,17 @@
                     <tr>
                         <th>Position</th>
                         <th>Player</th>
-                        <th>Score</th>
+                        <th>Wins</th>
+                        <th>Draws</th>
+                        <th>Losses</th>
                     </tr>
                 </thead>
                 <tbody>
                     <td data-cell="position">1</td>
                     <td data-cell="player">Computer</td>
-                    <td data-cell="score">0</td>
+                    <td data-cell="wins">0</td>
+                    <td data-cell="draws">0</td>
+                    <td data-cell="losses">0</td>
                 </tbody>
             </table>
         </section>
@@ -60,5 +76,7 @@
     <footer class="footer">
         <p class="center">Chris Rothrie &copy;</p>
     </footer>
+
+    <script src="JS/index.js"></script>
 </body>
 </html>

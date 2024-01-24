@@ -38,51 +38,49 @@ class Player {
     }
 }
 
-//Create the players
+//GAME LOGIC
+
+//Game set-up
 
 let compPlayer = new Player("Computer");
-let humanPlayer = new Player("Chris"); 
-
-//Gme logic
+let humanPlayer;
 
 //Variables
-let inPlay = true;
 const gameChoice = ["Rock","Paper","Scissors"];
 let result = null;
+let inPlay = false;
 
 //Make choices
-let compChoice = gameChoice[Math.floor(Math.random() * 3)];
-let playerChoice = gameChoice[2]; //based on button entry
+function playGame(pc) {
+    let compChoice = gameChoice[Math.floor(Math.random() * 3)];
+    let playerChoice = pc;
 
-//Find out result
-if(compChoice===playerChoice) { //draw
-    compPlayer.setDraws();
-    humanPlayer.setDraws();
-    updateResult(compChoice,playerChoice,2);
-} else if(compChoice==="Rock") {
-    if(playerChoice==="Paper") {
-        humanPlayerWin(compChoice,playerChoice,0); //player wins
-    } else {
-        compPlayerWin(compChoice,playerChoice,1); //computer wins
-    }
-} else if(compChoice==="Paper") {
-    if(playerChoice==="Scissors") {
-        humanPlayerWin(compChoice,playerChoice,0); //player wins
-    } else {
-        compPlayerWin(compChoice,playerChoice,1); //computer wins
-    }
-} else if(compChoice==="Scissors") {
-    if(playerChoice==="Rock") {
-        //player wins
-        humanPlayerWin(compChoice,playerChoice,0);
-    } else {
-        compPlayerWin(compChoice,playerChoice,1); //computer wins
+    //Find out result
+    if(compChoice===playerChoice) { //draw
+        compPlayer.setDraws();
+        humanPlayer.setDraws();
+        updateResult(compChoice,playerChoice,2);
+    } else if(compChoice==="Rock") {
+        if(playerChoice==="Paper") {
+            humanPlayerWin(compChoice,playerChoice,0); //player wins
+        } else {
+            compPlayerWin(compChoice,playerChoice,1); //computer wins
+        }
+    } else if(compChoice==="Paper") {
+        if(playerChoice==="Scissors") {
+            humanPlayerWin(compChoice,playerChoice,0); //player wins
+        } else {
+            compPlayerWin(compChoice,playerChoice,1); //computer wins
+        }
+    } else if(compChoice==="Scissors") {
+        if(playerChoice==="Rock") {
+            //player wins
+            humanPlayerWin(compChoice,playerChoice,0);
+        } else {
+            compPlayerWin(compChoice,playerChoice,1); //computer wins
+        }
     }
 }
-
-console.log(result);
-console.log(compPlayer);
-console.log(humanPlayer);
 
 //Helper functions
 
@@ -119,4 +117,65 @@ function compPlayerWin(cc,pc,outcome) {
     humanPlayer.setLose();
     compPlayer.setWins();
     updateResult(cc,pc,outcome);
+}
+
+//Interaction with page
+
+let nameOutput = document.getElementById("gameSection_name");
+let nameForm = document.getElementById("playerForm");
+let nameFormSubmit = document.getElementById("nameFormSubmit");
+
+nameForm.addEventListener('click', (event) => {
+    event.preventDefault();
+});
+
+nameFormSubmit.addEventListener('click',() => {
+    try {
+        let nameInput = document.getElementById("playerName").value;
+        if(nameInput==="") throw "No name entered";
+        nameOutput.innerHTML = "Ready to play " + nameInput;
+        humanPlayer = new Player(nameInput); 
+        inPlay = true;
+        playerForm.style.display = "none";
+        playerFormH3.style.display = "none";
+        gameForm.style.display = "flex";
+    }
+    catch(err) {
+        alert(err);
+    } 
+});
+
+let gameForm = document.getElementById("gameForm");
+let playerForm = document.getElementById("playerForm");
+let playerFormH3 = document.getElementById("playerFormH3");
+let nextGameForm = document.getElementById("nextGameForm");
+let newGameBtn = document.getElementById("nextGameFormNewGameBtn");
+let gameSectionResult = document.getElementById("gameSectionResult");
+let rockBtn = document.getElementById("gameFormRockBtn");
+let paperBtn = document.getElementById("gameFormPaperBtn");
+let scissorBtn = document.getElementById("gameFormScissorBtn");
+
+newGameBtn.addEventListener('click',newGameBtnAction);
+rockBtn.addEventListener('click',() => {gameBtn(gameChoice[0])});
+paperBtn.addEventListener('click',() => {gameBtn(gameChoice[1])});
+scissorBtn.addEventListener('click',() => {gameBtn(gameChoice[2])});
+
+function gameBtn(pc) {
+    if(humanPlayer!=null && inPlay) {
+        playGame(pc);
+        inPlay = false;
+        nextGameForm.style.display = "flex";
+        gameSectionResult.style.display = "flex";
+        gameSectionResult.innerHTML = result;
+    }
+}
+
+function newGameBtnAction() {
+    inPlay = true;
+    nextGameForm.style.display = "none";
+    gameSectionResult.style.display = "none";
+}
+
+function newPlayerBtn() {
+    //in here hide game sectiion and reshow new player section
 }

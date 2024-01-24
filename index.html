@@ -8,6 +8,7 @@
     <title>Rock Paper Scissors!</title>
     <link rel="icon" href="Images/gameFavIcon.png" type="image/x-icon">
     <link rel="stylesheet" href="css/style.css">
+    <script defer src="JS/index.js"></script>
 </head>
 <body>  
     <header class="header">
@@ -22,30 +23,30 @@
         <section class="gameSection">
             <h2>Let's Play!</h2>
 
-            <h3>Player Details</h3>
+            <h3 id="playerFormH3">Player Details</h3>
 
             <form id="playerForm" class="playerForm" action="">
 <!--                 <label for="playerName">Name:</label> -->
                 <input type="text" name="playerName" id="playerName" placeholder="Enter your name...">
-                <button>Submit</button>
+                <button id="nameFormSubmit">Submit</button>
             </form>
 
             <h3>Game</h3>
 
-            <p>Ready to play...<span class="highlight">you need to enter your name!</span></p>
+            <p id="gameSection_name">Ready to play...<span class="highlight">you need to enter your name!</span></p>
 
-            <form id="gameForm" class="gameForm" action="">
-                <button class="gameForm_Rockbtn">Rock</button>
-                <button class="gameForm_Paperbtn">Paper</button>
-                <button class="gameForm_Scissorbtn">Scissors</button>
-            </form>
+            <div id="gameForm" class="gameForm">
+                <button id="gameFormRockBtn" class="gameForm_Rockbtn">Rock</button>
+                <button id="gameFormPaperBtn" class="gameForm_Paperbtn">Paper</button>
+                <button id="gameFormScissorBtn" class="gameForm_Scissorbtn">Scissors</button>
+            </div>
 
-            <p id="gameSection_ result" class="gameSection_Result"></p>
+            <p id="gameSectionResult" class="gameSection_Result">HOLD</p>
 
-            <form id="nextGameForm" class = "nextGameForm">
-                <button>New Game</button>
+            <div id="nextGameForm" class = "nextGameForm">
+                <button id="nextGameFormNewGameBtn">New Game</button>
                 <button>New Player</button>
-            </form>
+            </div>
 
         </section>
 
@@ -63,11 +64,13 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <td data-cell="position">1</td>
-                    <td data-cell="player">Computer</td>
-                    <td data-cell="wins">0</td>
-                    <td data-cell="draws">0</td>
-                    <td data-cell="losses">0</td>
+                    <tr>
+                        <td data-cell="position">1</td>
+                        <td data-cell="player">Computer</td>
+                        <td data-cell="wins">0</td>
+                        <td data-cell="draws">0</td>
+                        <td data-cell="losses">0</td>
+                    </tr>
                 </tbody>
             </table>
         </section>
@@ -76,7 +79,5 @@
     <footer class="footer">
         <p class="center">Chris Rothrie &copy;</p>
     </footer>
-
-    <script src="JS/index.js"></script>
 </body>
 </html>

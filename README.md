@@ -26,14 +26,11 @@ The main purpose to use and improve my coding skills!
 
 ## To do
 
-EVERYTHING!
-
-### Initial build
-
-1. HTML page content with form, game section and scores table
-2. CSS styling of the page
-3. JS of game logic
-4. JS of score tracking logic
+1. Style the scoretable - done
+2. Add local data to record results from previous sessions
+3. Update scoretable with the scores after each game
+4. Syling and displying of the results - set over several lines and sort the bolding out etc
+5. Ability to reset the scoretable back to zero/blank
 
 ### Bugs & enhancements
 

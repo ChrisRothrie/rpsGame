@@ -8,7 +8,7 @@
     <title>Rock Paper Scissors!</title>
     <link rel="icon" href="Images/gameFavIcon.png" type="image/x-icon">
     <link rel="stylesheet" href="css/style.css">
-    <script defer src="JS/index.js"></script>
+    <script type="module" src="JS/index.js"></script>
 </head>
 <body>  
     <header class="header">
@@ -45,7 +45,7 @@
 
             <div id="nextGameForm" class = "nextGameForm">
                 <button id="nextGameFormNewGameBtn">New Game</button>
-                <button>New Player</button>
+                <button id="nextGameFormNewPlayerBtn">New Player</button>
             </div>
 
         </section>
@@ -53,7 +53,7 @@
         <section class="scoreSection">
             <h2>Scoreboard</h2>
 
-            <table>
+            <table id="scoreboard">
                 <thead>
                     <tr>
                         <th>Position</th>

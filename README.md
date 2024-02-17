@@ -21,17 +21,16 @@ The main purpose to use and improve my coding skills!
 
 ## Styles
 
-- Font: TBC
+- Font: All from google fonts: Rubik Moonrocks','Courgette', 'MedievalSharp' for the header then of course Robot
 - Colours: #0C0F0A #FF206E #FBFF12 #41EAD4 #FFFFFF
 
 ## To do
 
-1. Style the scoretable - done
-2. Add local data to record results from previous sessions
-3. Update scoretable with the scores after each game
-4. Syling and displying of the results - set over several lines and sort the bolding out etc
-5. Ability to reset the scoretable back to zero/blank
+Version 1.0 is complete
 
 ### Bugs & enhancements
 
-1. TBC
+1. Create a log in and track scores globally
+2. Change rock, paper scissor text to custom images that "shake" when hover
+3. When game choice made show two hands coming in 
+4. Improve result display - add emojis, increase font size, animate and add colour
